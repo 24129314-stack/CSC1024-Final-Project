@@ -163,7 +163,7 @@ def main():
         if choice == 1:
             add_new_post()
         elif choice == 2:
-            update_post_status()
+            spy_comment.update_post_status()
         elif choice == 3:
             record_engagement()
         elif choice == 4:

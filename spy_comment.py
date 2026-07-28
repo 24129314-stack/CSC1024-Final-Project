@@ -2,7 +2,7 @@
 # Status flow: Draft -> Scheduled -> Posted (terminal state).
 def update_post_status():
     # Open the posts file in read mode and load all lines into a list.
-    with open('posts.txt', 'r') as f:
+    with open('post.txt', 'r') as f:
         posts = f.readlines()
 
     # Prompt the user to enter the ID of the post they want to update.
@@ -40,7 +40,7 @@ def update_post_status():
         return
 
     # Write the updated list of posts back to the file, overwriting the old content.
-    with open('posts.txt', 'w') as f:
+    with open('post.txt', 'w') as f:
         f.writelines(posts)
 
     # Notify the user that the update was successful.
