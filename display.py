@@ -16,19 +16,19 @@ def read_post.txt():
 
                     details = line.split("|")      
                   
-                    part1 = details[0]
-                    part2 = details[1]
-                    part3 = details[2]
-                    part4 = details[3]
-                    part5 = details[4]
+                    atribute1 = details[0]
+                    atribute2 = details[1]
+                    atribute3 = details[2]
+                    atribute4 = details[3]
+                    atribute5 = details[4]
                 
 
                     post = [
-                        part1,
-                        part2,
-                        part3,
-                        part4,
-                        part5
+                        atribute1,
+                        atribute2,
+                        atribute3,
+                        atribute4,
+                        atribute5
                     ]
 
                     post_list.append(post)
@@ -59,7 +59,7 @@ def display_calendar(post_list):
 
     print(f"{'Part1':<20}{'Part2':<20}{'Part3':<20}{'Part4':<20}{'Part5':<20}")
 
-    print("-" * 85)
+    print("-" * 70)
 
     for post in post_list:
 
