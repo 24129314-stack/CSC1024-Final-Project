@@ -3,7 +3,7 @@
 # ===============================
 def read_post.txt():
 
-    post_list = []
+    post_record = []
 
     try:
         with open("posts.txt", "r") as file:
@@ -31,25 +31,25 @@ def read_post.txt():
                         atribute5
                     ]
 
-                    post_list.append(post)
+                    post_record.append(post)
 # =============================================
 # Incase posts.txt file is not found 
 # =============================================
     except FileNotFoundError:
         print("posts.txt not found.")
 
-    return post_list
+    return post_record
 
 # ========================================================
 # The final content calendar table will be displayed here :
 # ========================================================
-def display_calendar(post_list):
+def display_calendar(post_record):
 
 # ======================================================
 # If the record or file is empty then display the record is not found
 # ======================================================
    
-    if post_list [0]:
+    if post_record [0]:
         print("Not found.")
         return
 # ======================================================
@@ -61,7 +61,7 @@ def display_calendar(post_list):
 
     print("-" * 70)
 
-    for post in post_list:
+    for post in post_record:
 
         print(
             f"{post[0]:<20}"
