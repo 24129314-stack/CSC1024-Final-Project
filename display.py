@@ -1,7 +1,7 @@
 # ==============================
 # defining the Function to read file posts
 # ===============================
-def read_posts():
+def read_POSTS_FILE():
 
     post_list = []
 
