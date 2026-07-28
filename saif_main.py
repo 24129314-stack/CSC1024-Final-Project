@@ -24,7 +24,7 @@
 
 import os
 from datetime import datetime
-
+import spy_comment
 POSTS_FILE = "posts.txt"
 PLATFORMS_FILE = "platforms.txt"
 ENGAGEMENT_FILE = "engagement.txt"
@@ -94,8 +94,8 @@ def add_new_post():
 # UPDATE POST STATUS -> [Teammate]
 # Will change a post's status: Draft -> Scheduled -> Posted
 # -------------------------------------
-def update_post_status():
-    print("\n[Update Post Status feature - to be added by teammate]")
+# def update_post_status():
+#     print("\n[Update Post Status feature - to be added by teammate]")
 
 
 # -------------------------------------
