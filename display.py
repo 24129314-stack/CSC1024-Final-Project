@@ -1,3 +1,6 @@
+# ==============================
+# defining the Function to read file posts
+# ===============================
 def read_posts():
 
     post_list = []
@@ -29,21 +32,29 @@ def read_posts():
                     ]
 
                     post_list.append(post)
-
+# =============================================
+# Incase posts.txt file is not found 
+# =============================================
     except FileNotFoundError:
         print("posts.txt not found.")
 
     return post_list
 
-
-
-
+# ========================================================
+# The final content calendar table will be displayed here :
+# ========================================================
 def display_calendar(post_list):
 
+# ======================================================
+# If the record or file is empty then display the record is not found
+# ======================================================
+   
     if post_list [0]:
         print("Not found.")
         return
-
+# ======================================================
+# The layout of the content table 
+# =====================================================
     print("\n--------- CONTENT CALENDAR ---------")
 
     print(f"{'Part1':<20}{'Part2':<20}{'Part3':<20}{'Part4':<20}{'Part5':<20}")
@@ -60,6 +71,8 @@ def display_calendar(post_list):
             f"{post[4]:<20}"
         )
 
-
+# ================
+# Main program
+# ================
 posts = read_posts()
 display_content_calendar(posts)
