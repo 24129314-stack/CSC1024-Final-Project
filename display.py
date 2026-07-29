@@ -1,19 +1,15 @@
 # ==============================
 # defining the Function to read file posts
 # ===============================
-def read_post.txt():
-
+def read_posts():
     post_record = []
 
     try:
         with open("posts.txt", "r") as file:
-
-            for line in file:
-
-                line = line.strip()
+             for line in file:
+                 line = line.strip()
 
                 if line != "":
-
                     details = line.split("|")      
                   
                     atribute1 = details[0]
@@ -49,7 +45,7 @@ def display_calendar(post_record):
 # If the record or file is empty then display the record is not found
 # ======================================================
    
-    if post_record [0]:
+    if not post_record
         print("Not found.")
         return
 # ======================================================
@@ -58,7 +54,6 @@ def display_calendar(post_record):
     print("\n--------- CONTENT CALENDAR ---------")
 
     print(f"{'Part1':<20}{'Part2':<20}{'Part3':<20}{'Part4':<20}{'Part5':<20}")
-
     print("-" * 70)
 
     for post in post_record:
