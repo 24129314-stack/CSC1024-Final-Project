@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 # ==============================
 # defining the Function to read file posts
 # ===============================
@@ -22,7 +25,7 @@ def read_posts():
                          post_id,
                          platform,
                          caption,
-                         scheduled_date
+                         scheduled_date,
                          status
                     ]
 
@@ -48,15 +51,15 @@ def display_content_calendar(post_record):
         print("Not found.")
         return
 
-            post_record.sort(
-    key=lambda post: datetime.strptime(post[3], "%d/%m/%Y")
+    post_record.sort(
+        key=lambda post: datetime.strptime(post[3], "%d/%m/%Y")
             )
 # ======================================================
 # The layout of the content table 
 # =====================================================
     print("\n--------- CONTENT CALENDAR ---------")
 
-    print(f"{'post_id':<20}{'platform':<20}{'caption':<20}{'scheduled_date':<20}{'status':<20}")
+    print(f"{'Post_id':<20}{'Platform':<20}{'Caption':<20}{'Scheduled_date':<20}{'Status':<20}")
     print("-" * 100)
 
     for post in post_record:
