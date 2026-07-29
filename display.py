@@ -52,7 +52,7 @@ def display_content_calendar(post_record):
         return
 
     post_record.sort(
-        key=lambda post: datetime.strptime(post[3], "%d/%m/%Y")
+        key=lambda post: datetime.strptime(post[3], "%d/%m/%Y") 
             )
 # ======================================================
 # The layout of the content table 
