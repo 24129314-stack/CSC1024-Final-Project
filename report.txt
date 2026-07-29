@@ -1,0 +1,16 @@
+=============================================
+PERFORMANCE REPORT
+=============================================
+
+Total Posts Per Platform
+Instagram           : 1 post
+TikTok              : 1 post
+
+Best Performing Post
+Post ID            : 23
+Platform           : Instagram
+Total Engagement   : 1400
+
+Most Interactive Platform
+Instagram (1400 total engagement)
+=============================================

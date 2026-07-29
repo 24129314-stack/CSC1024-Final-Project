@@ -6,12 +6,16 @@
 # this fuction is to record engagement of a post, user manually enters post ID, and other data
 def record_engagement():
     post_id = input("Enter Post ID: ")
-    likes = input("Enter Likes: ")
-    comments = input("Enter Comments: ")
-    shares = input("Enter Shares: ")
-    views = input("Enter Views: ")
+    try:
+        likes = int(input("Enter Likes: "))
+        comments = int(input("Enter Comments: "))
+        shares = int(input("Enter Shares: "))
+        views = int(input("Enter Views: "))
+    except Exception as e:
+        print(f"Invalid Reason: {e}")
+        run_engagement_module()
     with open("engagement.txt", "a") as file:
-        file.write(post_id + "," + likes + "," + comments + "," + shares + "," + views + "\n")
+        file.write(f"{post_id},{likes},{comments},{shares},{views}\n")
     print("Engagement recorded successfully!")
 
 # this fuction is to display all engagement records by recenty added datas
@@ -62,11 +66,16 @@ def update_engagement():
         for line in file:
             data = line.split(",")
             if data[0] == post_id:
-                likes = input("New Likes: ")
-                comments = input("New Comments: ")
-                shares = input("New Shares: ")
-                views = input("New Views: ")
-                new_data.append(post_id + "," + likes + "," + comments + "," + shares + "," + views + "\n")
+                try:
+                    likes = int(input("New Likes: "))
+                    comments = int(input("New Comments: "))
+                    shares = int(input("New Shares: "))
+                    views = int(input("New Views: "))
+                except Exception as e:
+                    print(f"Invalid Reason: {e}")
+                    run_engagement_module()
+
+                new_data.append(f"{post_id},{likes},{comments},{shares},{views}\n")
                 found = True
             else:
                 new_data.append(line)
@@ -93,29 +102,36 @@ def delete_engagement():
             file.write(line)
     print("Engagement deleted successfully!")
 
-# while to true to ensure program runs until user selects exit option  
-while True:
-    print("\n===== Engagement Menu =====")
-    print("1. Record Engagement")
-    print("2. Display All Engagement")
-    print("3. Search Engagement")
-    print("4. Update Engagement")
-    print("5. Delete Engagement")
-    print("6. Exit")
-    choice = input("Enter your choice: ")
+# while to true to ensure program runs until user selects exit option
+def run_engagement_module():
+    while True:
+        print("\n===== Engagement Menu =====")
+        print("1. Record Engagement")
+        print("2. Display All Engagement")
+        print("3. Search Engagement")
+        print("4. Update Engagement")
+        print("5. Delete Engagement")
+        print("6. Exit")
+        choice = input("Enter your choice: ")
 
-    if choice == "1":
-        record_engagement()
-    elif choice == "2":
-        display_engagement()
-    elif choice == "3":
-        search_engagement()
-    elif choice == "4":
-        update_engagement()
-    elif choice == "5":
-        delete_engagement()
-    elif choice == "6":
-        print("Now exiting the program, see you soon!")
-        break
-    else:
-        print("Invalid choice.")
+        try:
+            choice = int(choice)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 7.")
+            continue
+
+        if choice == "1":
+            record_engagement()
+        elif choice == "2":
+            display_engagement()
+        elif choice == "3":
+            search_engagement()
+        elif choice == "4":
+            update_engagement()
+        elif choice == "5":
+            delete_engagement()
+        elif choice == "6":
+            print("Now exiting the engagament, see you soon!")
+            break
+        else:
+            print("Invalid choice.")

@@ -20,9 +20,12 @@ def update_post_status():
             # Transition the status: Draft becomes Scheduled.
             if status == 'Draft':
                 data[4] = 'Scheduled'
+                print("Post status changed: Draft -> Scheduled")
             # Transition the status: Scheduled becomes Posted.
             elif status == 'Scheduled':
                 data[4] = 'Posted'
+                print("Post status changed: Scheduled -> Posted")
+
             # Posted is a terminal state — no further transitions allowed.
             elif status == 'Posted':
                 print("This post has already been posted.")

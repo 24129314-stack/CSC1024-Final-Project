@@ -24,8 +24,11 @@
 
 import os
 from datetime import datetime
-import spy_comment
-POSTS_FILE = "posts.txt"
+from posts_module import update_post_status
+from engagement_module import run_engagement_module
+from calendar_module import run_calendar_module
+from report_module import generate_performance_report,export_report
+POSTS_FILE = "post.txt"
 PLATFORMS_FILE = "platforms.txt"
 ENGAGEMENT_FILE = "engagement.txt"
 
@@ -102,32 +105,32 @@ def add_new_post():
 # RECORD ENGAGEMENT METRICS -> [Teammate]
 # Will log likes, comments, shares, views for a Posted post into engagement.txt
 # -------------------------------------
-def record_engagement():
-    print("\n[Record Engagement Metrics feature - to be added by teammate]")
+# def record_engagement():
+#     print("\n[Record Engagement Metrics feature - to be added by teammate]")
 
 
 # -------------------------------------
 # DISPLAY CONTENT CALENDAR -> [Teammate]
 # Will show all posts sorted by date with platform, caption preview, status
 # -------------------------------------
-def display_content_calendar():
-    print("\n[Display Content Calendar feature - to be added by teammate]")
+# def display_content_calendar():
+#     print("\n[Display Content Calendar feature - to be added by teammate]")
 
 
 # -------------------------------------
 # GENERATE PERFORMANCE REPORT -> [Teammate]
 # Will show total posts per platform, best performing post, most interactive platform
 # -------------------------------------
-def generate_performance_report():
-    print("\n[Generate Performance Report feature - to be added by teammate]")
+# def generate_performance_report():
+#     print("\n[Generate Performance Report feature - to be added by teammate]")
 
 
 # -------------------------------------
 # EXPORT REPORT TO FILE -> [Teammate]
 # Will save the performance report into report.txt
 # -------------------------------------
-def export_report():
-    print("\n[Export Report feature - to be added by teammate]")
+# def export_report():
+#     print("\n[Export Report feature - to be added by teammate]")
 
 
 # -------------------------------------
@@ -163,11 +166,11 @@ def main():
         if choice == 1:
             add_new_post()
         elif choice == 2:
-            spy_comment.update_post_status()
+            update_post_status()
         elif choice == 3:
-            record_engagement()
+            run_engagement_module()
         elif choice == 4:
-            display_content_calendar()
+            run_calendar_module()
         elif choice == 5:
             generate_performance_report()
         elif choice == 6:
@@ -177,6 +180,7 @@ def main():
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 7.")
+    return
 
 
 if __name__ == "__main__":
