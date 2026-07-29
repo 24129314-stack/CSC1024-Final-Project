@@ -11,19 +11,19 @@ def read_posts():
                  if line != "":
                     details = line.split("|")      
                   
-                    atribute1 = details[0]
-                    atribute2 = details[1]
-                    atribute3 = details[2]
-                    atribute4 = details[3]
-                    atribute5 = details[4]
+                    date = details[0]
+                    post_id = details[1]
+                    platform = details[2]
+                    status = details[3]
+                    scheduled_time = details[4]
                 
 
                     post = [
-                        atribute1,
-                        atribute2,
-                        atribute3,
-                        atribute4,
-                        atribute5
+                        date,
+                        post_id,
+                        platform,
+                        status,
+                        scheduled_time
                     ]
 
                     post_record.append(post)
@@ -38,13 +38,13 @@ def read_posts():
 # ========================================================
 # The final content calendar table will be displayed here :
 # ========================================================
-def display_calendar(post_record):
+def display_content_calendar(post_record):
 
 # ======================================================
 # If the record or file is empty then display the record is not found
 # ======================================================
    
-    if not post_record
+    if not post_record:
         print("Not found.")
         return
 # ======================================================
@@ -52,8 +52,8 @@ def display_calendar(post_record):
 # =====================================================
     print("\n--------- CONTENT CALENDAR ---------")
 
-    print(f"{'Part1':<20}{'Part2':<20}{'Part3':<20}{'Part4':<20}{'Part5':<20}")
-    print("-" * 70)
+    print(f"{'date':<20}{'post_id':<20}{'platform':<20}{'status':<20}{'scheduled_time':<20}")
+    print("-" * 100)
 
     for post in post_record:
 
