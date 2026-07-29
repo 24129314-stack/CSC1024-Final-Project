@@ -8,8 +8,7 @@ def read_posts():
         with open("posts.txt", "r") as file:
              for line in file:
                  line = line.strip()
-
-                if line != "":
+                 if line != "":
                     details = line.split("|")      
                   
                     atribute1 = details[0]
