@@ -11,19 +11,19 @@ def read_posts():
                  if line != "":
                     details = line.split("|")      
                   
-                    date = details[0]
-                    post_id = details[1]
-                    platform = details[2]
-                    status = details[3]
-                    scheduled_time = details[4]
+                    post_id = details[0]
+                    platform = details[1]
+                    caption = details[2]
+                    scheduled_date = details[3]
+                    status = details[4]
                 
 
                     post = [
-                        date,
-                        post_id,
-                        platform,
-                        status,
-                        scheduled_time
+                         post_id,
+                         platform,
+                         caption,
+                         scheduled_date
+                         status
                     ]
 
                     post_record.append(post)
@@ -47,12 +47,16 @@ def display_content_calendar(post_record):
     if not post_record:
         print("Not found.")
         return
+
+            post_record.sort(
+    key=lambda post: datetime.strptime(post[3], "%d/%m/%Y")
+            )
 # ======================================================
 # The layout of the content table 
 # =====================================================
     print("\n--------- CONTENT CALENDAR ---------")
 
-    print(f"{'date':<20}{'post_id':<20}{'platform':<20}{'status':<20}{'scheduled_time':<20}")
+    print(f"{'post_id':<20}{'platform':<20}{'caption':<20}{'scheduled_date':<20}{'status':<20}")
     print("-" * 100)
 
     for post in post_record:
