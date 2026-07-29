@@ -9,11 +9,11 @@ def read_posts():
 
     try:
         with open("posts.txt", "r") as file:
-             for line in file:
+            for line in file:
                  line = line.strip()
                  if line != "":
-                    details = line.split("|")      
-                  
+                    details = line.split("|") 
+                    if len(details) >= 5:
                     post_id = details[0]
                     platform = details[1]
                     caption = details[2]
