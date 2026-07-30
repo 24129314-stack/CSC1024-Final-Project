@@ -1,12 +1,19 @@
+# ==================
+# reading platform.txt file
+# ===================
 def read_platforms():
-    platform_log = []
-
+    platforms_log = []
+# ==================
+# opening the file
+# ===================
     try:
         with open('platforms.txt', 'r') as f:
           for line in f:
               line = line.strip()
 
-
+# =======================================
+# adding the number of details in the file
+# =======================================
               if line != "":
                  details = line.split('|')
                  if len(details) >= 3:
@@ -20,8 +27,15 @@ def read_platforms():
                           followers
                      ]
                      platform_log.append(platform)
-
+# =================================
+# incase platforms.txt is not found
+# ================================
     except FileNotFoundError:
         print('platforms.txt not found')
        
-    return platform_log
+    return platforms_log
+
+# ====== testing ======
+platforms_log = read_platforms()
+print(platforms_log)
+
