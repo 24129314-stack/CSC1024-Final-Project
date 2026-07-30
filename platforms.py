@@ -26,7 +26,7 @@ def read_platforms():
                           platform_name,
                           followers
                      ]
-                     platform_log.append(platform)
+                     platforms_log.append(platform)
 # =================================
 # incase platforms.txt is not found
 # ================================
@@ -37,5 +37,7 @@ def read_platforms():
 
 # ====== testing ======
 platforms_log = read_platforms()
-print(platforms_log)
+
+for platform in platforms_log:
+    print(platform)
 
