@@ -63,6 +63,9 @@ def add_new_post():
     if platform == "":
         print("Platform cannot be empty. Returning to menu.")
         return
+    if platform != "Instagram" and platform != "TikTok" and platform != "X":
+        print("Platform must be either Instagram or TikTok or X.")
+        return
 
     #User input for post caption
     caption = input("Enter Caption: ").strip()

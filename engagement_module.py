@@ -6,6 +6,29 @@
 # this fuction is to record engagement of a post, user manually enters post ID, and other data
 def record_engagement():
     post_id = input("Enter Post ID: ")
+    found=False
+    #search the post ID on post.txt to confirm this post is exist
+    with open("post.txt", "r") as f:
+        for line in f:
+            data = line.split("|")
+            if data[0] == post_id:
+                found = True
+        if found == False:
+            print("Post ID not found.")
+            return
+
+    #cannot insert repeat post_id into the engagement.txt.
+    found = False
+    with open("engagement.txt", "r") as f:
+        for line in f:
+            data = line.split(",")
+            if data[0] == post_id:
+                found = True
+        if found == True:
+            print(f"Engagement record for Post ID {post_id} already exists.")
+            print("Please use Update Engagement instead.")
+            return
+
     try:
         likes = int(input("Enter Likes: "))
         comments = int(input("Enter Comments: "))
@@ -114,11 +137,7 @@ def run_engagement_module():
         print("6. Exit")
         choice = input("Enter your choice: ")
 
-        try:
-            choice = int(choice)
-        except ValueError:
-            print("Invalid input. Please enter a number between 1 and 7.")
-            continue
+
 
         if choice == "1":
             record_engagement()
