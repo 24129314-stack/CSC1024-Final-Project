@@ -1,1 +1,4 @@
+PL01|Instagram|15000
+PL02|TikTok|2000
+PL03|X|8000
 
